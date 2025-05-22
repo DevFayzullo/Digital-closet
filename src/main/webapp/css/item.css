@@ -1,0 +1,574 @@
+@charset "UTF-8";
+
+/* GmarketSans 폰트 설정 */
+@font-face {
+	font-family: 'GmarketSans';
+	src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSans';
+	src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+		format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+/* 공통 텍스트 스타일 */
+.title, .sub_title {
+	font-family: 'GmarketSans';
+	height: 20px;
+}
+
+/* 제목 영역 */
+.title_wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	margin-bottom: 20px;
+	gap: 20px;
+}
+
+.title_wrap .title {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.title_wrap .sub_title {
+	font-size: 16px;
+	font-weight: 500;
+	color: #888;
+}
+
+/* 홈 상품 섹션 */
+.home_products, .products {
+	width: 100%;
+	padding: 40px 16px;
+}
+
+.home_products .product_list {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+@media ( min-width : 768px) {
+	.home_products, .products {
+		padding: 40px 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.home_products, .products {
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 40px 60px;
+	}
+	.title_wrap {
+		max-width: 1280px;
+		margin: 0 auto 40px;
+	}
+}
+
+/* 상품 리스트 */
+.product_list_wrap {
+	overflow-x: auto;
+}
+
+.product_list {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 20px;
+}
+
+@media ( max-width : 1024px) {
+	.product_list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media ( max-width : 768px) {
+	.product_list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.product_item {
+	width: 100%;
+}
+
+.item_inner {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: #000;
+}
+
+/* 이미지 박스 */
+.thumb_box {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1/1;
+	background-color: #eaeaea;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.thumb_box img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.status_value {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	font-size: 12px;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 2px 6px;
+	border-radius: 4px;
+}
+
+/* 상품 정보 */
+.info_box {
+	margin-top: 10px;
+}
+
+.brand-name {
+	font-size: 13px;
+	color: #666;
+}
+
+.product-name {
+	font-size: 14px;
+	font-weight: 600;
+	margin-top: 4px;
+}
+
+.tag_container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	gap: 6px;
+}
+
+.tag {
+	align-items: center;      /* 수직 가운데 정렬 */
+	justify-content: center;   /* 수평 가운데 정렬 */
+	display: inline-block;
+	line-height: 20px;     /* ← 수직 위치 보정 */
+	font-size: 12px;
+	padding: 2px 6px;
+	background-color: #f2f9f6;
+	color: #31b46e;
+	border-radius: 4px;
+}
+
+/* 슬리퍼 탭 메뉴 스타일 */
+.slides-tab-menu {
+	padding: 0 16px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+@media ( min-width : 768px) {
+	.slides-tab-menu {
+		padding: 0 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.slides-tab-menu {
+		padding: 0 60px;
+		max-width: 1280px;
+	}
+}
+
+.slides-tab-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.slides-tab {
+	font-family: 'GmarketSans';
+	font-weight: 500;
+	flex: 0 0 auto;
+	padding: 8px 16px;
+	background-color: var(--greyscale-dark-2-grey-extra-light, #eee);
+	border: none;
+	border-radius: 999px;
+	font-size: 16px;
+	color: var(--greyscale-dark-alpha-70-dark-80, #444);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.slides-tab.active {
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+}
+
+/* 러닝화 탭 메뉴 스타일 */
+.running-tab-menu {
+	padding: 0 16px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+@media ( min-width : 768px) {
+	.running-tab-menu {
+		padding: 0 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.running-tab-menu {
+		padding: 0 60px;
+		max-width: 1280px;
+	}
+}
+
+.running-tab-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.running-tab {
+	font-family: 'GmarketSans';
+	font-weight: 500;
+	flex: 0 0 auto;
+	padding: 8px 16px;
+	background-color: var(--greyscale-dark-2-grey-extra-light, #eee);
+	border: none;
+	border-radius: 999px;
+	font-size: 16px;
+	color: var(--greyscale-dark-alpha-70-dark-80, #444);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.running-tab.active {
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+}
+
+/* 운동화 탭 메뉴 스타일 */
+.sneakers-tab-menu {
+	padding: 0 16px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+@media ( min-width : 768px) {
+	.sneakers-tab-menu {
+		padding: 0 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.sneakers-tab-menu {
+		padding: 0 60px;
+		max-width: 1280px;
+	}
+}
+
+.sneakers-tab-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.sneakers-tab {
+	font-family: 'GmarketSans';
+	font-weight: 500;
+	flex: 0 0 auto;
+	padding: 8px 16px;
+	background-color: var(--greyscale-dark-2-grey-extra-light, #eee);
+	border: none;
+	border-radius: 999px;
+	font-size: 16px;
+	color: var(--greyscale-dark-alpha-70-dark-80, #444);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.sneakers-tab.active {
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+}
+
+/* 티셔츠 탭 메뉴 스타일 */
+.t-shirt-tab-menu {
+	padding: 0 16px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+@media ( min-width : 768px) {
+	.t-shirt-tab-menu {
+		padding: 0 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.t-shirt-tab-menu {
+		padding: 0 60px;
+		max-width: 1280px;
+	}
+}
+
+.t-shirt-tab-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.t-shirt-tab {
+	font-family: 'GmarketSans';
+	font-weight: 500;
+	flex: 0 0 auto;
+	padding: 8px 16px;
+	background-color: var(--greyscale-dark-2-grey-extra-light, #eee);
+	border: none;
+	border-radius: 999px;
+	font-size: 16px;
+	color: var(--greyscale-dark-alpha-70-dark-80, #444);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.t-shirt-tab.active {
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+}
+
+/* 후드티 탭 메뉴 스타일 */
+.hoodie-tab-menu {
+	padding: 0 16px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+@media ( min-width : 768px) {
+	.hoodie-tab-menu {
+		padding: 0 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.hoodie-tab-menu {
+		padding: 0 60px;
+		max-width: 1280px;
+	}
+}
+
+.hoodie-tab-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.hoodie-tab {
+	font-family: 'GmarketSans';
+	font-weight: 500;
+	flex: 0 0 auto;
+	padding: 8px 16px;
+	background-color: var(--greyscale-dark-2-grey-extra-light, #eee);
+	border: none;
+	border-radius: 999px;
+	font-size: 16px;
+	color: var(--greyscale-dark-alpha-70-dark-80, #444);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.hoodie-tab.active {
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+}
+
+/* 숏팬츠 탭 메뉴 스타일 */
+.shortPants-tab-menu {
+	padding: 0 16px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+@media ( min-width : 768px) {
+	.shortPants-tab-menu {
+		padding: 0 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.shortPants-tab-menu {
+		padding: 0 60px;
+		max-width: 1280px;
+	}
+}
+
+.shortPants-tab-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.shortPants-tab {
+	font-family: 'GmarketSans';
+	font-weight: 500;
+	flex: 0 0 auto;
+	padding: 8px 16px;
+	background-color: var(--greyscale-dark-2-grey-extra-light, #eee);
+	border: none;
+	border-radius: 999px;
+	font-size: 16px;
+	color: var(--greyscale-dark-alpha-70-dark-80, #444);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.shortPants-tab.active {
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+}
+
+/* 트레이닝팬츠 탭 메뉴 스타일 */
+.sweatPants-tab-menu {
+	padding: 0 16px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+@media ( min-width : 768px) {
+	.sweatPants-tab-menu {
+		padding: 0 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.sweatPants-tab-menu {
+		padding: 0 60px;
+		max-width: 1280px;
+	}
+}
+
+.sweatPants-tab-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.sweatPants-tab {
+	font-family: 'GmarketSans';
+	font-weight: 500;
+	flex: 0 0 auto;
+	padding: 8px 16px;
+	background-color: var(--greyscale-dark-2-grey-extra-light, #eee);
+	border: none;
+	border-radius: 999px;
+	font-size: 16px;
+	color: var(--greyscale-dark-alpha-70-dark-80, #444);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.sweatPants-tab.active {
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+}
+
+/* 브랜드 탭 메뉴 */
+.brand-tab-menu {
+	padding: 0 16px;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+@media ( min-width : 768px) {
+	.brand-tab-menu {
+		padding: 0 30px;
+	}
+}
+
+@media ( min-width : 1025px) {
+	.brand-tab-menu {
+		padding: 0 60px;
+		max-width: 1280px;
+	}
+}
+
+.brand-tab-menu::-webkit-scrollbar {
+	display: none;
+}
+
+.brand-tab {
+	font-family: 'GmarketSans';
+	font-weight: 500;
+	flex: 0 0 auto;
+	padding: 8px 16px;
+	background-color: var(--greyscale-dark-2-grey-extra-light);
+	border: none;
+	border-radius: 999px;
+	font-size: 16px;
+	color: var(--greyscale-dark-alpha-70-dark-80);
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+.brand-tab.active {
+	font-family: 'GmarketSans';
+	font-weight: 700;
+	background-color: #000;
+	color: #fff;
+}
+
+/* 기타 레이아웃 */
+.layout_list_vertical {
+	display: flex;
+	flex-direction: column;
+	row-gap: 6px;
+	padding: 20px 40px;
+	width: -webkit-fill-available;
+}
+
+.text_body {
+	display: flex;
+	justify-content: center;
+	width: -webkit-fill-available;
+}
+
+.shoes_title {
+	font-family: 'GmarketSans';
+	font-size: 24px;
+	font-weight: 700;
+	text-align: center;
+	color: #222;
+	width: inherit;
+}
+
+.shoes_subtitle {
+	font-family: 'GmarketSans';
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	color: #888888;
+	width: inherit;
+}
