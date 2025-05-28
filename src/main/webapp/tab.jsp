@@ -25,20 +25,20 @@
 		<div id="tab2" class="tab_panel active">
 			<!-- 추천만 active -->
 			<jsp:include page="banner.jsp" />
-			<jsp:include page="item_list1.jsp" />
+			<jsp:include page="tab_topPicks/item_list1.jsp" />
 		</div>
 		<div id="tab3" class="tab_panel">
-			<jsp:include page="t-shirt.jsp" />
-			<jsp:include page="hoodie.jsp" />
+			<jsp:include page="tab_tops/t-shirt.jsp" />
+			<jsp:include page="tab_tops/hoodie.jsp" />
 		</div>
 		<div id="tab4" class="tab_panel">
-			<jsp:include page="short_pants.jsp" />
-			<jsp:include page="sweatpants.jsp" />
+			<jsp:include page="tab_bottoms/short_pants.jsp" />
+			<jsp:include page="tab_bottoms/sweatpants.jsp" />
 		</div>
 		<div id="tab5" class="tab_panel">
-			<jsp:include page="running_shoes.jsp" />
-			<jsp:include page="slides.jsp" />
-			<jsp:include page="sneakers.jsp" />
+			<jsp:include page="tab_shoes/running_shoes.jsp" />
+			<jsp:include page="tab_shoes/slides.jsp" />
+			<jsp:include page="tab_shoes/sneakers.jsp" />
 		</div>
 	</div>
 </body>
