@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="../../dbconn.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,124 +13,53 @@
 		<div class="product_list_wrap">
 			<div class="product_list">
 				<!-- 상품 카드 -->
+            <%
+                ResultSet rs = null;
+                PreparedStatement pstmt = null;
+
+                try {
+                	String sql = "SELECT POST_ID, POST_TITLE, POST_CAPTION, PICTURE_URL, REGISTER_DATE, USER_ID, ADMIN_ID, POST_SUBTITLE, TAG_ID FROM TOP_CLOTHES WHERE POST_TITLE = 'Yeezy' AND ADMIN_ID = 'A002'";;
+
+                    pstmt = conn.prepareStatement(sql);
+                    rs = pstmt.executeQuery();
+
+                    int iResult = 0;
+
+                    while (rs.next()) {
+                        String pictureUrl = rs.getString("PICTURE_URL");
+                        String POST_TITLE = rs.getString("POST_TITLE");
+                        String POST_CAPTION = rs.getString("POST_CAPTION");
+            %>
 				<div class="product_item">
 					<a href="#" class="item_inner">
 						<div class="thumb_box">
-							<img src="img/top/hoodie/hoodie_yeezy/hoodie_yeezy1.webp" alt="제품명">
+							<img src="<%=pictureUrl%>" alt="제품명">
 							<div class="bookmark_icon">
   								<img src="img/bookmark2.svg" alt="북마크 아이콘">
       						</div>
 						</div>
 						<div class="info_box">
-							<p class="brand-name">Yeezy</p>
-							<p class="product-name">Yeezy x Gosha Rubchinskiy YZY 
-							Black Dogs Hoodie Black</p>
+							<p class="brand-name"><%=POST_TITLE %></p>
+							<p class="product-name"><%=POST_CAPTION %></p>
 							<div class="tag_container">
-								<div class="tag">후드</div>
+								<div class="tag">후드티</div>
 								<div class="tag">Yeezy</div>
 							</div>
 						</div>
 					</a>
 				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/top/hoodie/hoodie_yeezy/hoodie_yeezy2.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Yeezy</p>
-							<p class="product-name">Yeezy x Gosha Rubchinskiy YZY 
-							Black Dogs Hoodie Heather Grey</p>
-							<div class="tag_container">
-								<div class="tag">후드</div>
-								<div class="tag">Yeezy</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/top/hoodie/hoodie_yeezy/hoodie_yeezy3.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Yeezy</p>
-							<p class="product-name">Yeezy Gap Engineered By Balenciaga 
-							Dove Hoodie Washed Black</p>
-							<div class="tag_container">
-								<div class="tag">후드</div>
-								<div class="tag">Yeezy</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/top/hoodie/hoodie_yeezy/hoodie_yeezy4.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Yeezy</p>
-							<p class="product-name">Yeezy x Gosha Rubchinskiy Tribune 
-							Herald HD-01 Hoodie Charcoal</p>
-							<div class="tag_container">
-								<div class="tag">후드</div>
-								<div class="tag">Yeezy</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/top/hoodie/hoodie_yeezy/hoodie_yeezy5.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Yeezy</p>
-							<p class="product-name">Yeezy Gap Hoodie Light Brown</p>
-							<div class="tag_container">
-								<div class="tag">후드</div>
-								<div class="tag">Yeezy</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/top/hoodie/hoodie_yeezy/hoodie_yeezy6.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Yeezy</p>
-							<p class="product-name">Yeezy x Gosha Rubchinskiy Tribune 
-							Herald HD-01 Hoodie White</p>
-							<div class="tag_container">
-								<div class="tag">후드</div>
-								<div class="tag">Yeezy</div>
-							</div>
-						</div>
-					</a>
-				</div>
+            <%
+                    }
+
+                } catch (SQLException ex) {
+                    out.println("Product 테이블 호출이 실패했습니다.");
+                    ex.printStackTrace();
+                } finally {
+                    if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+                    if (pstmt != null) try { pstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
+                    if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+                }
+            %>
 				<!-- 상품 카드 끝 -->
 			</div>
 		</div>
