@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ include file="../../dbconn.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,126 +9,57 @@
 <link rel="stylesheet" type="text/css" href="css/item.css?after">
 </head>
 <body>
-	<div class="products">
-		<div class="product_list_wrap">
-			<div class="product_list">
-				<!-- 상품 카드 -->
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/bottoms/sweatPants/sweatPants_supreme/sweatPants_supreme1.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Supreme</p>
-							<p class="product-name">Supreme Inset Link Track Pant Light Grey - 24SS</p>
-							<div class="tag_container">
-								<div class="tag">트레이닝팬츠</div>
-								<div class="tag">Supreme</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/bottoms/sweatPants/sweatPants_supreme/sweatPants_supreme2.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Supreme</p>
-							<p class="product-name">Supreme x Umbro Break-Away Track Pants Light Grey - 23SS</p>
-							<div class="tag_container">
-								<div class="tag">트레이닝팬츠</div>
-								<div class="tag">Supreme</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/bottoms/sweatPants/sweatPants_supreme/sweatPants_supreme3.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Supreme</p>
-							<p class="product-name">Supreme Spellout Embroidered Track Pant Grey - 24FW</p>
-							<div class="tag_container">
-								<div class="tag">트레이닝팬츠</div>
-								<div class="tag">Supreme</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/bottoms/sweatPants/sweatPants_supreme/sweatPants_supreme4.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Supreme</p>
-							<p class="product-name">Supreme Spellout Embroidered Track Pants White - 25SS</p>
-							<div class="tag_container">
-								<div class="tag">트레이닝팬츠</div>
-								<div class="tag">Supreme</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/bottoms/sweatPants/sweatPants_supreme/sweatPants_supreme5.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Supreme</p>
-							<p class="product-name">Supreme Polartec Pant Orange - 24FW</p>
-							<div class="tag_container">
-								<div class="tag">트레이닝팬츠</div>
-								<div class="tag">Supreme</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/bottoms/sweatPants/sweatPants_supreme/sweatPants_supreme6.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">Supreme</p>
-							<p class="product-name">Supreme Contrast Zip Warm Up Pant Snow Camo - 25SS</p>
-							<div class="tag_container">
-								<div class="tag">트레이닝팬츠</div>
-								<div class="tag">Supreme</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<!-- 상품 카드 끝 -->
-			</div>
-		</div>
-	</div>
+    <div class="products">
+        <div class="product_list_wrap">
+            <div class="product_list">
+                <!-- 상품 카드 -->
+                <%
+                ResultSet rs = null;
+                PreparedStatement pstmt = null;
+
+                try {
+                    String sql = "SELECT POST_ID, POST_TITLE, POST_CAPTION, PICTURE_URL FROM BOTTOM_CLOTHES WHERE POST_TITLE = 'Supreme' AND ADMIN_ID = 'A001'";
+                    pstmt = conn.prepareStatement(sql);
+                    rs = pstmt.executeQuery();
+
+                    while (rs.next()) {
+                        String pictureUrl = rs.getString("PICTURE_URL");
+                        String postTitle = rs.getString("POST_TITLE");
+                        String postCaption = rs.getString("POST_CAPTION");
+                %>
+                <div class="product_item">
+                    <a href="#" class="item_inner">
+                        <div class="thumb_box">
+                            <img src="<%=pictureUrl%>" alt="<%=postCaption%>">
+                            <div class="bookmark_icon">
+                                <img src="img/bookmark2.svg" alt="북마크 아이콘">
+                            </div>
+                        </div>
+                        <div class="info_box">
+                            <p class="brand-name"><%=postTitle %></p>
+                            <p class="product-name"><%=postCaption %></p>
+                            <div class="tag_container">
+                                <div class="tag">트레이닝팬츠</div>
+                                <div class="tag">Supreme</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <%
+                    }
+
+                } catch (SQLException ex) {
+                    out.println("상품 정보를 불러오는 데 실패했습니다: " + ex.getMessage());
+                    ex.printStackTrace();
+                } finally {
+                    if (rs != null) try { rs.close(); } catch (SQLException e) {}
+                    if (pstmt != null) try { pstmt.close(); } catch (SQLException e) {}
+                    if (conn != null) try { conn.close(); } catch (SQLException e) {}
+                }
+                %>
+                <!-- 상품 카드 끝 -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
