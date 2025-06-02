@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>아디다스 러닝화</title>
-<link rel="stylesheet" type="text/css" href="css/item.css?after">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/item.css?after">
 </head>
 <body>
 	<div class="products">
@@ -18,7 +18,7 @@
                 PreparedStatement pstmt = null;
 
                 try {
-                    String sql = "select POST_ID, POST_TITLE, POST_CAPTION, PICTURE_URL, REGISTER_DATE, USER_ID, ADMIN_ID, POST_SUBTITLE, TAG_ID from CLOTH_POST";
+                    String sql = "select POST_ID, POST_TITLE, POST_CAPTION, PICTURE_URL, REGISTER_DATE, USER_ID, ADMIN_ID, POST_SUBTITLE, TAG_ID from SHOES WHERE POST_TITLE = 'Adidas' and ADMIN_ID = 'A001'";
 
                     pstmt = conn.prepareStatement(sql);
                     rs = pstmt.executeQuery();
