@@ -51,5 +51,3 @@
     </script>
 </body>
 </html>
-
-//for check
