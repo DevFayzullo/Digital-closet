@@ -102,10 +102,10 @@ Digital-closet/
 
 | 이름         | 역할              | GitHub 프로필                          |
 |--------------|-------------------|----------------------------------------|
-| DevFayzullo(줄로)  | 팀장 / 백엔드 개발  | [DevFayzullo](https://github.com/DevFayzullo) |
-| 김진성             | 디자이너           | [Zzing279](https://github.com/Zzing279) |
-| Ariel(아리엘)      | 프론드앤드 개발자   | [yxcks1709](https://github.com/yxcks1709) |
-| 뿌나               | DB관리자          | [manivanhthongsida](https://github.com/manivanhthongsida) |
+| DevFayzullo(줄로)  | 프론드앤드 개발   | [DevFayzullo](https://github.com/DevFayzullo) |
+| 김진성             | 디자이너         | [Zzing279](https://github.com/Zzing279) |
+| Ariel(아리엘)      | 백앤드 개발       | [yxcks1709](https://github.com/yxcks1709) |
+| 뿌나               | DB관리자         | [manivanhthongsida](https://github.com/manivanhthongsida) |
 
 ---
 
