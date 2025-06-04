@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ include file="../../dbconn.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Product List</title>
-<link rel="stylesheet" type="text/css" href="css/item.css?after">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/item.css?after">
 </head>
 <body>
 	<div class="home_products">

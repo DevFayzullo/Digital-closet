@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<link rel="stylesheet" type="text/css" href="css/item.css?after">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/item.css?after">
 
 <div class="layout_list_vertical">
 	<div class="text_body">

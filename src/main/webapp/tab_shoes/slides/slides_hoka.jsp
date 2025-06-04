@@ -42,7 +42,7 @@
 							<p class="brand-name"><%=POST_TITLE %></p>
 							<p class="product-name"><%=POST_CAPTION %></p>
 							<div class="tag_container">
-								<div class="tag">러닝화</div>
+								<div class="tag">슬라이드</div>
 								<div class="tag">Hoka</div>
 							</div>
 						</div>
