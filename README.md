@@ -93,7 +93,7 @@ Digital-closet/
 
 협업 또는 문의 사항은 아래로 연락 주세요:
 
-- **이름**: DevFayzullo Abduganiev  
+- **이름**: DevFayzullo  
 - **GitHub**: [DevFayzullo](https://github.com/DevFayzullo)
 
 ---
