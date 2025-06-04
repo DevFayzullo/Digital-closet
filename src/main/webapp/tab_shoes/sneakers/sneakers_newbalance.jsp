@@ -1,104 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ include file="../../dbconn.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>뉴발란스 운동화</title>
-<link rel="stylesheet" type="text/css" href="css/item.css?after">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/item.css?after">
 </head>
 <body>
 	<div class="products">
 		<div class="product_list_wrap">
 			<div class="product_list">
 				<!-- 상품 카드 -->
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/shoes/sneakers/sneakers_newbalance/sneakers_newbalance1.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">New Balance</p>
-							<p class="product-name">New Balance 992 Made in USA Core Grey Silver Metallic</p>
-							<div class="tag_container">
-								<div class="tag">운동화</div>
-								<div class="tag">New Balance</div>
-							</div>
-						</div>
-					</a>
-				</div>
+				<%
+                ResultSet rs = null;
+                PreparedStatement pstmt = null;
 
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/shoes/sneakers/sneakers_newbalance/sneakers_newbalance2.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">New Balance</p>
-							<p class="product-name">New Balance 740v2 Black Silver Metallic</p>
-							<div class="tag_container">
-								<div class="tag">운동화</div>
-								<div class="tag">New Balance</div>
-							</div>
-						</div>
-					</a>
-				</div>
+                try {
+                    String sql = "select POST_ID, POST_TITLE, POST_CAPTION, PICTURE_URL, REGISTER_DATE, USER_ID, ADMIN_ID, POST_SUBTITLE, TAG_ID from SHOES WHERE POST_TITLE = 'New Balance' AND ADMIN_ID = 'A003'";
 
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/shoes/sneakers/sneakers_newbalance/sneakers_newbalance3.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">New Balance</p>
-							<p class="product-name">(W) New Balance Breeze SD2202 Metalic Silver</p>
-							<div class="tag_container">
-								<div class="tag">운동화</div>
-								<div class="tag">New Balance</div>
-							</div>
-						</div>
-					</a>
-				</div>
+                    pstmt = conn.prepareStatement(sql);
+                    rs = pstmt.executeQuery();
 
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/shoes/sneakers/sneakers_newbalance/sneakers_newbalance4.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">New Balance</p>
-							<p class="product-name">New Balance 530 Steel Grey</p>
-							<div class="tag_container">
-								<div class="tag">운동화</div>
-								<div class="tag">New Balance</div>
-							</div>
-						</div>
-					</a>
-				</div>
+                    int iResult = 0;
 
+                    while (rs.next()) {
+                        String pictureUrl = rs.getString("PICTURE_URL");
+                        String POST_TITLE = rs.getString("POST_TITLE");
+                        String POST_CAPTION = rs.getString("POST_CAPTION");
+            %>
 				<div class="product_item">
 					<a href="#" class="item_inner">
 						<div class="thumb_box">
-							<img src="img/shoes/sneakers/sneakers_newbalance/sneakers_newbalance5.webp" alt="제품명">
+							<img src="<%=pictureUrl%>" alt="제품명">
 							<div class="bookmark_icon">
   								<img src="img/bookmark2.svg" alt="북마크 아이콘">
       						</div>
 						</div>
 						<div class="info_box">
-							<p class="brand-name">New Balance</p>
-							<p class="product-name">New Balance 1906R Harbor Grey Silver Metalic</p>
+							<p class="brand-name"><%=POST_TITLE %></p>
+							<p class="product-name"><%=POST_CAPTION %></p>
 							<div class="tag_container">
 								<div class="tag">운동화</div>
 								<div class="tag">New Balance</div>
@@ -106,25 +48,18 @@
 						</div>
 					</a>
 				</div>
+            <%
+                    }
 
-				<div class="product_item">
-					<a href="#" class="item_inner">
-						<div class="thumb_box">
-							<img src="img/shoes/sneakers/sneakers_newbalance/sneakers_newbalance6.webp" alt="제품명">
-							<div class="bookmark_icon">
-  								<img src="img/bookmark2.svg" alt="북마크 아이콘">
-      						</div>
-						</div>
-						<div class="info_box">
-							<p class="brand-name">New Balance</p>
-							<p class="product-name">New Balance 1906R Triple Black</p>
-							<div class="tag_container">
-								<div class="tag">운동화</div>
-								<div class="tag">New Balance</div>
-							</div>
-						</div>
-					</a>
-				</div>
+                } catch (SQLException ex) {
+                    out.println("Product 테이블 호출이 실패했습니다.");
+                    ex.printStackTrace();
+                } finally {
+                    if (rs != null) try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+                    if (pstmt != null) try { pstmt.close(); } catch (SQLException e) { e.printStackTrace(); }
+                    if (conn != null) try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+                }
+            %>
 				<!-- 상품 카드 끝 -->
 			</div>
 		</div>
