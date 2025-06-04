@@ -98,6 +98,17 @@ Digital-closet/
 
 ---
 
+## 👥 팀원 소개
+
+| 이름         | 역할              | GitHub 프로필                          |
+|--------------|-------------------|----------------------------------------|
+| DevFayzullo(줄로)  | 팀장 / 백엔드 개발  | [DevFayzullo](https://github.com/DevFayzullo) |
+| 김진성             | 디자이너           | [Zzing279](https://github.com/Zzing279) |
+| Ariel(아리엘)      | 프론드앤드 개발자   | [yxcks1709](https://github.com/yxcks1709) |
+| 뿌나               | DB관리자          | [manivanhthongsida](https://github.com/manivanhthongsida) |
+
+---
+
 ## 📄 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 제공됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참고하세요.
