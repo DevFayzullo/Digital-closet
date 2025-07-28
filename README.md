@@ -71,19 +71,60 @@
 
 ```
 Digital-closet/
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/
-│       │       └── digitalcloset/
-│       │           ├── controller/
-│       │           ├── model/
-│       │           └── repository/
-│       └── resources/
-│           ├── static/
-│           └── templates/
+├── src/main/webapp/
+│       ├── css/
+│       │    ├── item.css
+|       |    └── style.css
+│       ├── img/...
+│       ├── tab_bottoms/
+│       │    ├── shortPants/
+│       │       ├── shortPands_adidas.jsp
+│       │       ├── shortPands_nike.jsp
+│       │       ├── shortPands_stussy.jsp
+│       │    ├── sweatPands
+│       │       ├── sweatPants_adidas.jsp
+│       │       ├── sweatPants_nike.jsp
+│       │       ├── sweatPants_supreme.jsp
+│       │    ├── short_pands.jsp
+│       │    ├── sweatpants.jsp
+│       ├── tab_shoes/
+│       │    ├── running_shoes/
+│       │       ├── running_shoes_adidas.jsp
+│       │       ├── running_shoes_asics.jsp
+│       │       ├── running_shoes_nike.jsp
+│       │    ├── slides
+│       │       ├── slides_adidas.jsp
+│       │       ├── slides_hoka.jsp
+│       │       ├── slides_oofos.jsp
+│       │    ├── slides
+│       │       ├── sneakers_adidas.jsp
+│       │       ├── sneakers_jordan.jsp
+│       │       ├── sneakers_newbalance.jsp
+│       │    ├── running_shoes.jsp
+│       │    ├── slides.jsp
+│       │    ├── sneakers.jsp
+│       ├── tab_topPicks/
+│       │    ├── item_list1.jsp
+│       ├── tab_tops/
+│       │    ├── hooides/
+│       │       ├── hoodiee_nike.jsp
+│       │       ├── hoodiee_stussy.jsp
+│       │       ├── hoodiee_yeezy.jsp
+│       │    ├── tShirts/
+│       │       ├── t-shirt_bape.jsp
+│       │       ├── t-shirt_stussy.jsp
+│       │       ├── t-shirt_supreme.jsp
+│       │    ├── hoodie.jsp
+│       │    ├── t-shirt.jsp
+│       ├── banner.jsp
+│       ├── dbconn.jsp
+│       ├── footer.jsp
+│       ├── header.jsp
+│       ├── index.jsp
+│       ├── profile.jsp
+│       ├── style_list.jsp
+│       ├── tab.jsp
 ├── .gitignore
-├── pom.xml
 └── README.md
 ```
 
