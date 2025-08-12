@@ -1,73 +1,73 @@
-# 👗 디지털 옷장 (Digital Closet)
+# 👗 Digital Closet
 
-**디지털 옷장(Digital Closet)** 프로젝트에 오신 것을 환영합니다!  
-이 웹 기반 애플리케이션은 사용자가 옷을 디지털로 정리하고, 코디를 계획하며, 옷장을 체계적으로 관리할 수 있도록 도와줍니다.
+Welcome to the **Digital Closet** project!  
+This web-based application helps users organize their clothes digitally, plan outfits, and manage their wardrobe efficiently.
 
 ---
 
-## 📌 소개
+## 📌 Introduction
 
-이 프로젝트는 다음과 같은 기술로 개발되었습니다:
+This project is developed using the following technologies:
 
-- **Java** (백엔드)
+- **Java** (Backend)
 - **Spring Framework**
-- **HTML/CSS** (프론트엔드)
+- **HTML/CSS** (Frontend)
 
-### 주요 기능
+### Key Features
 
-- 옷 등록 및 분류
-- 다양한 상황에 맞는 코디 구성
-- 옷장 재고 관리
+- Register and categorize clothing items
+- Create outfit combinations for various occasions
+- Manage wardrobe inventory
 
 ---
 
-## 🚀 시작하기
+## 🚀 Getting Started
 
-### 필요 조건
+### Prerequisites
 
-- Java JDK 8 이상
+- Java JDK 8 or higher
 - Apache Maven
-- STS(Spring Tool Suite) 또는 선호하는 IDE
+- STS (Spring Tool Suite) or any preferred IDE
 
-### 설치 방법
+### Installation
 
-1. GitHub 저장소 클론:
+1. Clone the GitHub repository:
 
    ```bash
    git clone https://github.com/DevFayzullo/Digital-closet.git
    ```
 
-2. 프로젝트 디렉토리로 이동:
+2. Navigate to the project directory:
 
    ```bash
    cd Digital-closet
    ```
 
-3. Maven으로 프로젝트 빌드:
+3. Build the project with Maven:
 
    ```bash
    mvn clean install
    ```
 
-4. 애플리케이션 실행:
+4. Run the application:
 
    ```bash
    mvn spring-boot:run
    ```
 
-5. 브라우저에서 `http://localhost:8080` 열기
+5. Open your browser and go to `http://localhost:8080`
 
 ---
 
-## 🧪 기능 요약
+## 🧪 Features Summary
 
-- 👕 옷 등록 및 분류
-- 🧥 코디 조합 생성
-- 📦 옷장 재고 관리
+- 👕 Clothing registration and categorization
+- 🧥 Outfit combination creation
+- 📦 Wardrobe inventory management
 
 ---
 
-## 📂 프로젝트 구조
+## 📂 Project Structure
 
 ```
 Digital-closet/
@@ -130,31 +130,31 @@ Digital-closet/
 
 ---
 
-## 📬 문의
+## 📬 Contact
 
-협업 또는 문의 사항은 아래로 연락 주세요:
+For collaboration or inquiries, please contact:
 
-- **이름**: DevFayzullo  
+- **Name**: DevFayzullo  
 - **GitHub**: [DevFayzullo](https://github.com/DevFayzullo)
 
 ---
 
-## 👥 팀원 소개
+## 👥 Team Members
 
-| 이름         | 역할              | GitHub 프로필                          |
-|--------------|-------------------|----------------------------------------|
-| DevFayzullo(줄로)  | 프론드앤드 개발   | [DevFayzullo](https://github.com/DevFayzullo) |
-| 김진성              | 디자이너         | [Zzing279](https://github.com/Zzing279) |
-| Ariel(아리엘)      | 백앤드 개발       | [yxcks1709](https://github.com/yxcks1709) |
-| 뿌나               | DB관리자         | [manivanhthongsida](https://github.com/manivanhthongsida) |
-
----
-
-## 📄 라이선스
-
-이 프로젝트는 MIT 라이선스 하에 제공됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참고하세요.
+| Name          | Role            | GitHub Profile                              |
+|---------------|-----------------|---------------------------------------------|
+| DevFayzullo   | Frontend Dev    | [DevFayzullo](https://github.com/DevFayzullo) |
+| 김진성          | Designer        | [Zzing279](https://github.com/Zzing279)     |
+| Ariel         | Backend Dev     | [yxcks1709](https://github.com/yxcks1709)   |
+| 뿌나           | Database Admin  | [manivanhthongsida](https://github.com/manivanhthongsida) |
 
 ---
 
-## 🌍 다른 언어
-- [🇬🇧 English README](./README.en.md)
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🌍 Other Languages
+- [🇰🇷 한국어 README](./README.md)
